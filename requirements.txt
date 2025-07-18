@@ -1,0 +1,68 @@
+# Core Data Processing
+pandas>=2.0.0
+numpy>=1.24.0
+scipy>=1.14.0
+
+# Machine Learning and NLP
+scikit-learn>=1.5.0
+transformers>=4.40.0
+torch>=2.0.0
+sentence-transformers>=3.0.0
+
+# Financial Data and APIs
+yfinance>=0.2.0
+alpha-vantage>=2.3.0
+praw>=7.7.0  # Reddit API
+tweepy>=4.14.0  # Twitter API
+newsapi-python>=0.2.6
+
+# Async and Web
+aiohttp>=3.8.0
+asyncio-throttle>=1.0.0
+requests>=2.31.0
+
+# Database
+sqlalchemy>=2.0.0
+alembic>=1.13.0
+# sqlite3 is built into Python - no need to install
+
+# Data Visualization
+plotly>=5.15.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+dash>=2.11.0
+
+# Development and Testing
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.1.0
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.4.0
+
+# Configuration and Logging
+python-dotenv>=1.0.0
+pydantic>=2.0.0
+loguru>=0.7.0
+
+# Utilities
+python-dateutil>=2.8.0
+pytz>=2023.3
+tqdm>=4.65.0
+schedule>=1.2.0
+
+# System Monitoring
+psutil>=5.9.0
+
+# Additional Database Support
+aiosqlite>=0.19.0
+asyncpg>=0.28.0
+
+# Optional: For production deployment
+redis>=4.6.0
+psycopg2-binary>=2.9.0
+gunicorn>=21.0.0
+
+# Additional ML and Data Processing
+textblob>=0.17.1
+vaderSentiment>=3.3.2

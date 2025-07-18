@@ -1,0 +1,2 @@
+[console_scripts]
+goquant-sentiment = goquant.cli:main

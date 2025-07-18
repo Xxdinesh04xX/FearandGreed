@@ -1,0 +1,37 @@
+# Minimal requirements that work with Python 3.13
+# Core packages
+pandas>=2.0.0
+numpy>=1.24.0
+requests>=2.31.0
+aiohttp>=3.8.0
+
+# Configuration and validation
+pydantic==1.10.12
+pydantic-settings
+python-dotenv>=1.0.0
+
+# Database
+sqlalchemy>=2.0.0
+
+# Web dashboard
+dash>=2.14.0
+plotly>=5.15.0
+
+# Financial APIs
+yfinance>=0.2.0
+alpha-vantage>=3.0.0
+praw>=7.7.0
+tweepy>=4.14.0
+newsapi-python>=0.2.6
+
+# Basic ML (we'll add advanced ML later if needed)
+scikit-learn>=1.3.0
+
+# Logging
+loguru>=0.7.0
+
+# System monitoring
+psutil>=5.9.0
+
+# Async database support
+aiosqlite>=0.19.0

@@ -1,0 +1,161 @@
+Metadata-Version: 2.4
+Name: goquant-sentiment-trader
+Version: 0.1.0
+Summary: Comprehensive sentiment analysis and trade signal generation system
+Home-page: https://github.com/goquant/sentiment-trader
+Author: GoQuant Team
+Author-email: GoQuant Team <team@goquant.com>
+License: MIT
+Project-URL: Homepage, https://github.com/goquant/sentiment-trader
+Project-URL: Repository, https://github.com/goquant/sentiment-trader.git
+Project-URL: Documentation, https://goquant.readthedocs.io
+Project-URL: Bug Tracker, https://github.com/goquant/sentiment-trader/issues
+Keywords: trading,sentiment-analysis,finance,nlp,machine-learning
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Financial and Insurance Industry
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Office/Business :: Financial :: Investment
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: home-page
+Dynamic: requires-python
+
+# GoQuant Sentiment Trader
+
+A comprehensive sentiment analysis and trade signal generation system that processes real-time data from social media (Twitter, Reddit), news feeds, and financial markets to generate actionable trading signals.
+
+## Features
+
+- **Multi-Source Data Ingestion**: Twitter, Reddit, News APIs, and Financial Data
+- **Advanced NLP**: FinBERT-based sentiment analysis optimized for financial text
+- **Real-time Processing**: Asynchronous data processing with <5 second latency
+- **Signal Generation**: Fear/Greed indicators with quantifiable confidence scores
+- **Backtesting Framework**: Historical performance analysis and validation
+- **Interactive Dashboard**: Real-time sentiment monitoring and signal visualization
+
+## Quick Start
+
+### Prerequisites
+
+- Python 3.9 or higher
+- API keys for data sources (Twitter, Reddit, NewsAPI, etc.)
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/goquant/sentiment-trader.git
+cd sentiment-trader
+```
+
+2. Create and activate virtual environment:
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+3. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+4. Configure environment variables:
+```bash
+cp .env.example .env
+# Edit .env with your API keys
+```
+
+5. Initialize database:
+```bash
+python -m goquant.database.init_db
+```
+
+6. Run the system:
+```bash
+python -m goquant.main
+```
+
+## Configuration
+
+The system uses environment variables for configuration. See `.env.example` for all available options.
+
+### Required API Keys
+
+- **Twitter API v2**: Academic Research track recommended
+- **Reddit API**: Client ID and Secret
+- **NewsAPI**: Free tier available
+- **Financial Data**: Alpha Vantage or similar
+
+## Architecture
+
+```
+src/goquant/
+├── data/           # Data ingestion and processing
+├── sentiment/      # NLP and sentiment analysis
+├── signals/        # Trading signal generation
+├── database/       # Data storage and management
+├── dashboard/      # Web interface and visualization
+├── backtesting/    # Historical analysis and validation
+└── utils/          # Shared utilities and helpers
+```
+
+## Usage
+
+### Basic Usage
+
+```python
+from goquant import SentimentTrader
+
+trader = SentimentTrader()
+trader.start()  # Begin real-time processing
+
+# Get current sentiment
+sentiment = trader.get_sentiment("BTC")
+print(f"BTC Sentiment: {sentiment.score} (Confidence: {sentiment.confidence})")
+
+# Get trading signals
+signals = trader.get_signals()
+for signal in signals:
+    print(f"{signal.symbol}: {signal.action} (Strength: {signal.strength})")
+```
+
+### Dashboard
+
+Access the web dashboard at `http://localhost:8050` after starting the system.
+
+## Testing
+
+Run the test suite:
+```bash
+pytest tests/ -v --cov=src/goquant
+```
+
+## Performance Targets
+
+- **Processing Latency**: <5 seconds from data ingestion to signal generation
+- **Sentiment Accuracy**: >70% on labeled financial text
+- **System Uptime**: 24+ hours continuous operation
+- **Error Rate**: <5% for data processing
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests
+5. Submit a pull request
+
+## License
+
+MIT License - see LICENSE file for details.
+
+## Disclaimer
+
+This software is for educational and research purposes only. Trading involves risk and past performance does not guarantee future results. Always consult with a qualified financial advisor before making investment decisions.
